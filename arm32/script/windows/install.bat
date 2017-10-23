@@ -1,6 +1,7 @@
 @echo off
 
 adb root
+adb remount
 adb push ../../bin/busybox /system/bin/
 
 adb shell busybox mkdir -p /data/ubuntu
