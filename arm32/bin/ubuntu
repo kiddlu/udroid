@@ -1,0 +1,5 @@
+#!/system/bin/busybox sh
+
+/system/bin/busybox chroot /data/ubuntu/ /usr/bin/env \
+    HOME=/root \
+    /bin/bash
