@@ -1,6 +1,2 @@
-#!/system/bin/sh
-
-/data/ubuntu/bin/busybox chroot /data/ubuntu/ \
-    /usr/bin/env \
-    HOME=/root \
-    /bin/bash
+/data/ubuntu/bin/busybox \
+chroot /data/ubuntu/ /usr/bin/env HOME=/root /bin/bash

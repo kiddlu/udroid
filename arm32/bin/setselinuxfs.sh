@@ -1,5 +1,7 @@
 #!/bin/bash
 
+set -x
+
 usage() {
 cat <<USAGE
 
@@ -10,6 +12,6 @@ USAGE
 
 case $1 in
 rw) mount -o remount,rw /sys/fs/selinux;;
-ro) mount -o remount,rw /sys/fs/selinux;;
-*） exec echo "$usage";; 
+ro) mount -o remount,ro /sys/fs/selinux;;
+*) exec echo "$usage";; 
 esac

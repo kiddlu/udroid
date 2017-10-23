@@ -1,5 +1,3 @@
-#!/system/bin/sh
-
 umount /data/ubuntu/sdcard
 umount /data/ubuntu/system
 umount /data/ubuntu/sys/kernel/debug
