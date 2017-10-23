@@ -1,0 +1,11 @@
+#!/system/bin/sh
+
+umount /data/ubuntu/sdcard
+umount /data/ubuntu/system
+umount /data/ubuntu/tmp
+umount /data/ubuntu/run
+umount /data/ubuntu/sys/kernel/debug
+umount /data/ubuntu/sys/fs/selinux
+umount /data/ubuntu/sys
+umount /data/ubuntu/dev
+umount /data/ubuntu/proc
