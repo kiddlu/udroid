@@ -2,10 +2,9 @@
 
 mount -o bind /proc /data/ubuntu/proc
 mount -o bind /dev /data/ubuntu/dev
+mount -o bind /dev/pts /data/ubuntu/dev/pts
 mount -o bind /sys /data/ubuntu/sys
 mount -o bind /sys/fs/selinux /data/ubuntu/sys/fs/selinux
 mount -o bind /sys/kernel/debug /data/ubuntu/sys/kernel/debug
-mount -t tmpfs none /data/ubuntu/run
-mount -t tmpfs none /data/ubuntu/tmp
 mount -o bind /system/ /data/ubuntu/system
 mount -o bind /sdcard /data/ubuntu/sdcard
