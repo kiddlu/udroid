@@ -10,6 +10,7 @@ export LD_PRELOAD_OLD=$LD_PRELOAD
 unset LD_PRELOAD
 
 echo 0 > /proc/sys/kernel/kptr_restrict
+setenforce 0
 
 cat <<EOF
 make sure that your kernel enable these configs
@@ -30,8 +31,8 @@ CONFIG_KALLSYMS_ALL=y
 CONFIG_SYSCTL_SYSCALL=y
 
 /proc/<pid>/io :
-CONFIG_TASK_DELAY_ACCT=y
 CONFIG_TASKSTATS=y
+CONFIG_TASK_DELAY_ACCT=y
 CONFIG_TASK_IO_ACCOUNTING=y
 
 /sys/kernel/debug/tracing/block/ :
