@@ -17,6 +17,8 @@ adb push ../../bin/getdns.sh /data/ubuntu/usr/local/bin
 adb push ../../bin/setgroup.sh /data/ubuntu/usr/local/bin
 adb push ../../bin/setselinuxfs.sh /data/ubuntu/usr/local/bin
 adb push ../../bin/getselinuxfs.sh /data/ubuntu/usr/local/bin
+adb push ../../bin/setcharging.sh /data/ubuntu/usr/local/bin
+adb push ../../bin/getcharging.sh /data/ubuntu/usr/local/bin
 
 adb push ../../bin/start-sshd.sh /data/ubuntu/usr/local/bin
 

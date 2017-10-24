@@ -1,0 +1,17 @@
+#!/bin/bash
+
+set -x
+
+usage() {
+cat <<USAGE
+
+Usage: setcharging on/off
+
+USAGE
+}
+
+case $1 in
+on)  echo 1 > /sys/class/power_supply/battery/charging_enabled;;
+off) echo 0 > /sys/class/power_supply/battery/charging_enabled;;
+*) exec echo "$usage";;
+esac
