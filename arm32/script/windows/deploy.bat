@@ -18,6 +18,8 @@ adb push ../../bin/setgroup.sh /data/ubuntu/usr/local/bin
 adb push ../../bin/setselinuxfs.sh /data/ubuntu/usr/local/bin
 adb push ../../bin/getselinuxfs.sh /data/ubuntu/usr/local/bin
 
+adb push ../../bin/start-sshd.sh /data/ubuntu/usr/local/bin
+
 adb shell busybox chmod -R a+x /data/ubuntu/usr/local/bin
 
 adb shell busybox umount /data/ubuntu/sdcard
