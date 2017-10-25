@@ -1,8 +1,8 @@
-umount -f /data/ubuntu/sdcard
-umount -f /data/ubuntu/system
-umount -f /data/ubuntu/sys/kernel/debug
-umount -f /data/ubuntu/sys/fs/selinux
-umount -f /data/ubuntu/sys
-umount -f /data/ubuntu/dev/pts
-umount -f /data/ubuntu/dev
-umount -f /data/ubuntu/proc
+umount -f /data/udroid/sdcard
+umount -f /data/udroid/system
+umount -f /data/udroid/sys/kernel/debug
+umount -f /data/udroid/sys/fs/selinux
+umount -f /data/udroid/sys
+umount -f /data/udroid/dev/pts
+umount -f /data/udroid/dev
+umount -f /data/udroid/proc

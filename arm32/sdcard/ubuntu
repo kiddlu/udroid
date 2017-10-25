@@ -1,8 +1,8 @@
 #make sure selinux disable
 setenforce 0
 
-/data/ubuntu/bin/busybox \
-chroot /data/ubuntu/ \
+/data/udroid/bin/busybox \
+chroot /data/udroid/ \
 /usr/bin/env \
 HOME=/root \
 LD_PRELOAD_OLD=$LD_PRELOAD \
