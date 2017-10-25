@@ -1,2 +1,0 @@
-/data/ubuntu/bin/busybox \
-chroot /data/ubuntu/ /usr/bin/env HOME=/root /bin/bash

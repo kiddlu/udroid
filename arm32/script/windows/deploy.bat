@@ -6,22 +6,9 @@ adb shell mount -o rw,remount /
 adb push ../../bin/busybox /sbin/
 adb shell chmod a+x /sbin/busybox
 
-adb push ../../bin/ubuntu /sdcard/
-adb push ../../bin/fsmount /sdcard/
-adb push ../../bin/fsumount /sdcard/
+adb push ../../sdcard /sdcard/
 
-adb push ../../bin/capture.sh /data/ubuntu/usr/local/bin
-adb push ../../bin/fbn.sh     /data/ubuntu/usr/local/bin
-adb push ../../bin/setdns.sh /data/ubuntu/usr/local/bin
-adb push ../../bin/getdns.sh /data/ubuntu/usr/local/bin
-adb push ../../bin/setgroup.sh /data/ubuntu/usr/local/bin
-adb push ../../bin/setselinuxfs.sh /data/ubuntu/usr/local/bin
-adb push ../../bin/getselinuxfs.sh /data/ubuntu/usr/local/bin
-adb push ../../bin/setcharging.sh /data/ubuntu/usr/local/bin
-adb push ../../bin/getcharging.sh /data/ubuntu/usr/local/bin
-
-adb push ../../bin/start-sshd.sh /data/ubuntu/usr/local/bin
-
+adb push ../../bin /data/ubuntu/usr/local/bin
 adb shell busybox chmod -R a+x /data/ubuntu/usr/local/bin
 
 adb shell busybox umount /data/ubuntu/sdcard
@@ -50,6 +37,4 @@ adb shell busybox cp -f selinux_version /data/ubuntu/
 adb shell busybox cp -f sepolicy /data/ubuntu/
 adb shell busybox cp -f service_contexts /data/ubuntu/
 
-adb push ../../home/.bashrc /data/ubuntu/root
-adb push ../../home/.inputrc /data/ubuntu/root
-adb push ../../home/.vimrc /data/ubuntu/root
+adb push ../../home  /data/ubuntu/root

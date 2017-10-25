@@ -1,0 +1,10 @@
+#make sure selinux disable
+setenforce 0
+
+/data/ubuntu/bin/busybox \
+chroot /data/ubuntu/ \
+/usr/bin/env \
+HOME=/root \
+LD_PRELOAD_OLD=$LD_PRELOAD \
+LD_PRELOAD= \
+/bin/bash -i
