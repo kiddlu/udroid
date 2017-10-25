@@ -2,13 +2,13 @@
 
 adb root
 
-adb shell mount -o rw,remount /
-adb push ../../bin/busybox /sbin/
-adb shell chmod a+x /sbin/busybox
+::adb shell mount -o rw,remount /
+::adb push ../../bin/busybox /sbin/
+::adb shell chmod a+x /sbin/busybox
 
-adb push ../../sdcard /sdcard/
+adb push ../../sdcard /
 
-adb push ../../bin /data/ubuntu/usr/local/bin
+adb push ../../bin /data/ubuntu/usr/local
 adb shell busybox chmod -R a+x /data/ubuntu/usr/local/bin
 
 adb shell busybox umount /data/ubuntu/sdcard
@@ -37,4 +37,4 @@ adb shell busybox cp -f selinux_version /data/ubuntu/
 adb shell busybox cp -f sepolicy /data/ubuntu/
 adb shell busybox cp -f service_contexts /data/ubuntu/
 
-adb push ../../home  /data/ubuntu/root
+adb push ../../root  /data/ubuntu/
