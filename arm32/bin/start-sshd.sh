@@ -1,3 +1,3 @@
 #!/bin/bash
 
-nohup /usr/sbin/sshd -D > /var/sshd_out.log &
+nohup /usr/sbin/sshd -D > /var/log/sshd_out.log &

@@ -1,0 +1,11 @@
+#!/bin/bash
+mkdir -p /dev/shm
+mountpoint /dev/shm > /dev/null
+
+if [ $? != 0 ]; then
+  mount -t tmpfs none /dev/shm
+  chmod 777 /dev/shm
+fi
+
+#--verbose
+nohup chromium-browser --no-sandbox > /var/log/chromium_out.log &
