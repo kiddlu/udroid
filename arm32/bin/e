@@ -1,3 +1,9 @@
 #!/bin/sh
 
-code $*
+#ps -ax | grep -v grep | grep emacs > /dev/null
+#if [ $? -ne 0 ]; then
+#    emacs &
+#    sleep 3
+#fi
+
+emacs $*  &
