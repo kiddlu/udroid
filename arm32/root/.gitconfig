@@ -1,0 +1,38 @@
+[color]
+	diff = auto
+	branch = auto
+	status = auto
+	log = auto
+	ui = auto
+[gui]
+	encoding = utf-8
+[i18n]
+	commitencoding = utf-8
+	logoutputencoding = gbk
+[user]
+	email = kidd.dawny.lu@gmail.com 
+	name = kiddlu
+[alias]
+	co=checkout
+	cio=commit
+	ci=commit -a -s
+	br=branch
+	st=status
+	cp=cherry-pick
+	cr=cherry
+	rb=rebase
+	fp=format-patch
+	hist=log --pretty=format:\"%Cred%h %Cblue%ad %Cred| %Creset%s%d %Cgreen[%an]\" --graph --date=short
+	flog=log --pretty=fuller --graph
+
+[am]
+	keepcr = true
+
+[core]
+	editor = vim
+	filemode = false
+	trustctime = false
+[oh-my-zsh]
+	hide-status = 1
+[push]
+	default = matching
