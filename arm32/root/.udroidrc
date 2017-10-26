@@ -1,8 +1,0 @@
-export PATH=$PATH:/system/bin
-export OS_PLATFORM=udroid
-export TERM=xterm-256color
-
-if [ "$LD_PRELOAD" ]; then
-    export LD_PRELOAD_OLD=$LD_PRELOAD
-    unset LD_PRELOAD
-fi 
