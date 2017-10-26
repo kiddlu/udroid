@@ -1,8 +1,8 @@
-umount -f /data/udroid/sdcard
-umount -f /data/udroid/system
-umount -f /data/udroid/sys/kernel/debug
-umount -f /data/udroid/sys/fs/selinux
-umount -f /data/udroid/sys
-umount -f /data/udroid/dev/pts
-umount -f /data/udroid/dev
-umount -f /data/udroid/proc
+/data/udroid/bin/busybox umount -f /data/udroid/sdcard
+/data/udroid/bin/busybox umount -f /data/udroid/system
+/data/udroid/bin/busybox umount -f /data/udroid/sys/kernel/debug
+/data/udroid/bin/busybox umount -f /data/udroid/sys/fs/selinux
+/data/udroid/bin/busybox umount -f /data/udroid/sys
+/data/udroid/bin/busybox umount -f /data/udroid/dev/pts
+/data/udroid/bin/busybox umount -f /data/udroid/dev
+/data/udroid/bin/busybox umount -f /data/udroid/proc

@@ -1,14 +1,14 @@
-
-mountpoint /data/udroid/proc > /dev/null
+/system/bin/toybox mountpoint /data/udroid/proc > /dev/null
 
 if [ $? != 0 ]; then
-    mount -o bind /proc /data/udroid/proc
-    mount -o bind /dev /data/udroid/dev
-    mount -o bind /dev/pts /data/udroid/dev/pts
-    mount -o bind /sys /data/udroid/sys
-    mount -o bind /sys/fs/selinux /data/udroid/sys/fs/selinux
-    mount -o bind /sys/kernel/debug /data/udroid/sys/kernel/debug
-    mount -o bind /system/ /data/udroid/system
-    mount -o bind /sdcard /data/udroid/sdcard
+    /data/udroid/bin/busybox mount -o bind /proc /data/udroid/proc
+    /data/udroid/bin/busybox mount -o bind /dev /data/udroid/dev
+    /data/udroid/bin/busybox mount -o bind /dev/pts /data/udroid/dev/pts
+    /data/udroid/bin/busybox mount -o bind /sys /data/udroid/sys
+    /data/udroid/bin/busybox mount -o bind /sys/fs/selinux /data/udroid/sys/fs/selinux
+    /data/udroid/bin/busybox mount -o remount,ro,bind /sys/fs/selinux /data/udroid/sys/fs/selinux
+    /data/udroid/bin/busybox mount -o bind /sys/kernel/debug /data/udroid/sys/kernel/debug
+    /data/udroid/bin/busybox mount -o bind /system/ /data/udroid/system
+    /data/udroid/bin/busybox mount -o bind /sdcard /data/udroid/sdcard
 fi
 

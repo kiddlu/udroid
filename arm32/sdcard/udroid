@@ -1,5 +1,5 @@
 #make sure selinux disable
-setenforce 0
+/system/bin/setenforce 0
 
 /data/udroid/bin/busybox \
 chroot /data/udroid/ /usr/bin/env HOME=/root /bin/bash
