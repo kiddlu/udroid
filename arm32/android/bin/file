@@ -1,0 +1,6 @@
+#!/system/bin/sh
+
+/data/udroid/lib/ld-linux-armhf.so.3 \
+--library-path  /data/udroid/lib/arm-linux-gnueabihf:/data/udroid/usr/lib/arm-linux-gnueabihf \
+/data/udroid/usr/bin/file \
+$*

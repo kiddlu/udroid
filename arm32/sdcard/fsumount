@@ -4,5 +4,6 @@
 /data/udroid/bin/busybox umount -f /data/udroid/sys/fs/selinux
 /data/udroid/bin/busybox umount -f /data/udroid/sys
 /data/udroid/bin/busybox umount -f /data/udroid/dev/pts
+/data/udroid/bin/busybox umount -f /data/udroid/dev/shm
 /data/udroid/bin/busybox umount -f /data/udroid/dev
 /data/udroid/bin/busybox umount -f /data/udroid/proc
