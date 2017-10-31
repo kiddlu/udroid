@@ -1,8 +1,7 @@
 #!/system/bin/sh
 
+PERLLIB=/data/ubuntu/usr/share/perl/5.22 \
 /data/ubuntu/lib/ld-linux-armhf.so.3 \
 --library-path  /data/ubuntu/lib/arm-linux-gnueabihf:/data/ubuntu/usr/lib/arm-linux-gnueabihf \
-/data/ubuntu/usr/bin/vim.basic \
+/data/ubuntu/usr/bin/perl \
 $*
-
-clear
