@@ -9,7 +9,7 @@ cat /etc/lsb-release | grep ID=Ubuntu > /dev/null
 
 if [[ $? -eq "0" ]]; then
   PS1='\n\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]\n# '
-  export OS_PLATFORM=udroid
+  export OS_PLATFORM=ubuntu
   export PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games
   export PATH=$PATH:/system/bin
   if [ "$LD_PRELOAD" ]; then
@@ -20,5 +20,5 @@ else
   PS1='\n\[\033[45;30m\]android\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]\n# '
   export OS_PLATFORM=android
   export PATH=/sbin:/vendor/bin:/system/sbin:/system/bin:/system/xbin
-  export PATH=/data/udroid/usr/local/android/bin:$PATH
+  export PATH=/data/ubuntu/usr/local/android/bin:$PATH
 fi
