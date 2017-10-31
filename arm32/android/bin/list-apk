@@ -1,0 +1,14 @@
+#!/system/bin/sh
+
+PATH=/sbin:/vendor/bin:/system/sbin:/system/bin:/system/xbin
+mkdir -p /mnt/tmp
+
+pm list packages -f > /mnt/tmp/tmplog.pid.$$
+
+for dir in '/system/app' '/system/priv-app' '/system/vendor' '/system/framework' '/data/app'; do
+	echo 
+	echo dir: $dir
+	cat /mnt/tmp/tmplog.pid.$$ | grep $dir
+done
+
+rm /mnt/tmp/tmplog.pid.$$

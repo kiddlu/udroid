@@ -1,0 +1,6 @@
+#!/system/bin/sh
+PATH=/sbin:/vendor/bin:/system/sbin:/system/bin:/system/xbin
+
+packages=`dumpsys activity  | grep mFocusedActivity | awk {'print $4'} | sed 's/\(.*\)\/\.\(.*\)/\1/g'`
+pm list packages -f | grep $packages
+echo

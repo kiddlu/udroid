@@ -1,0 +1,3 @@
+HOME=/data/ubuntu/root \
+PATH=/data/ubuntu/usr/local/android/bin:$PATH \
+/system/bin/sh
