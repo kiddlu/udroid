@@ -2,5 +2,5 @@
 
 /data/ubuntu/lib/ld-linux-armhf.so.3 \
 --library-path  /data/ubuntu/lib/arm-linux-gnueabihf:/data/ubuntu/usr/lib/arm-linux-gnueabihf \
-/data/ubuntu/usr/bin/file -m /data/ubuntu/usr/share/file/magic.mgc \
+/data/ubuntu/bin/grep \
 $*

@@ -19,7 +19,7 @@ function capture_func()
     cat /sys/kernel/debug/tracing/trace > sys_ftrace
     cat /sys/kernel/debug/wakeup_sources > sys_wakeup_sources
     cat /sys/kernel/debug/shrinker > sys_shrinker
-    
+
     #tools
     dmesg > tools_dmesg
     ifconfig > tools_ifconfig
@@ -32,7 +32,7 @@ function capture_func()
     vmstat -D > tools_vmstat-D
     vmstat -w > tools_vmstat-w
     df -h > tools_df-h
-    
+
     #android
 	if [[ "$OS_PLATFORM" = "android" ]]; then
         /system/bin/getprop > android_getprop
