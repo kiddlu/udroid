@@ -1,0 +1,3 @@
+#!/system/bin/sh
+
+settings put system screen_brightness "$@"
