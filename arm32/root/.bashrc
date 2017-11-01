@@ -17,9 +17,10 @@ if [[ $? -eq "0" ]]; then
     unset LD_PRELOAD
   fi
 else
-  PS1='\n\[\033[45;30m\]android\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]\n# '
   export OS_PLATFORM=android
   export PATH=/sbin:/vendor/bin:/system/sbin:/system/bin:/system/xbin
   export PATH=/data/ubuntu/usr/local/android/bin:$PATH
+  PS1='\n\[\033[45;30m\]android\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]\n# '
+  #PS1='\nandroid:\w\n# '
   export TERM=ansi
 fi
