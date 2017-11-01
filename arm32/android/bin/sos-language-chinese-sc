@@ -10,4 +10,5 @@ sleep 2
 input tap 100 2400
 input tap 1000 1000
 
+sleep 1
 input keyevent 4
