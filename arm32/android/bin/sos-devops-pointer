@@ -13,6 +13,6 @@ sleep 1
 tap 100 2400
 tap 1250 2150
 
-keyevent 4
-keyevent 4
-keyevent 4
+key-back
+key-back
+key-back

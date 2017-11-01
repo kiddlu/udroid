@@ -10,4 +10,4 @@ sleep 2
 tap 100 2400
 tap 1000 400
 
-keyevent 4
+key-back

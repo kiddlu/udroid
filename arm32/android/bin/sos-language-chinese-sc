@@ -11,4 +11,4 @@ tap 100 2400
 tap 1000 1000
 
 sleep 1
-keyevent 4
+key-back

@@ -10,5 +10,5 @@ tap 100 1380
 tap 100 2000
 tap 100 1100
 
-keyevent 4
-keyevent 4
+key-back
+key-back
