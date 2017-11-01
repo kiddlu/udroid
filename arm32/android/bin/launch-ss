@@ -1,0 +1,10 @@
+#!/system/bin/sh
+
+set -x
+
+am start -n com.github.shadowsocks/com.github.shadowsocks.MainActivity
+
+sleep 1
+
+input tap 1300 2200
+input keyevent 4
