@@ -1,12 +1,12 @@
 #!/system/bin/sh
 set -x
 
-input keyevent 3
+key-home
 sleep 1
-input swipe 0 2000 0 0
+swipe 0 2000 0 0
 sleep 1
 
-input tap 800 2400
-input tap 1200 1900
-input tap 800 2400
-input tap 1200 1600
+tap 800 2400
+tap 1200 1900
+tap 800 2400
+tap 1200 1600

@@ -4,15 +4,15 @@ set -x
 am start -S com.android.settings/.Settings
 sleep 1
 
-input swipe 0 2000 0 0
+swipe 0 2000 0 0
 sleep 2
 
-input tap 100 1700
-input swipe 0 500 0 0
+tap 100 1700
+swipe 0 500 0 0
 sleep 1
-input tap 100 2400
-input tap 1250 2150
+tap 100 2400
+tap 1250 2150
 
-input keyevent 4
-input keyevent 4
-input keyevent 4
+keyevent 4
+keyevent 4
+keyevent 4
