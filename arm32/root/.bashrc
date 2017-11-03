@@ -7,7 +7,7 @@ export TERM=xterm-256color
 export PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games
 export PATH=$PATH:/sbin:/vendor/bin:/system/sbin:/system/bin:/system/xbin
 
-if [[ "$CHROOT" ]]; then
+if [[ "$CHROOT" || "$SSH_TTY" ]]; then
   PS1='\n\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]\n# '
   export OS_PLATFORM=ubuntu
   if [ "$LD_PRELOAD" ]; then
