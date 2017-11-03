@@ -4,7 +4,7 @@ set -x
 
 am start -n com.github.shadowsocks/com.github.shadowsocks.MainActivity
 
-sleep 1
+sleep 2
 
 tap 1300 2200
 key-back

@@ -2,4 +2,4 @@
 /system/bin/setenforce 0
 
 /data/ubuntu/bin/busybox \
-chroot /data/ubuntu/ /usr/bin/env HOME=/root /bin/bash
+chroot /data/ubuntu/ /usr/bin/env CHROOT=yes HOME=/root /bin/bash

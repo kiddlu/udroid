@@ -7,5 +7,11 @@ if [ $? != 0 ]; then
   chmod 777 /dev/shm
 fi
 
+if [[ -z "$1" ]]; then
+  scale=1
+else
+  scale=$1
+fi
+
 #--verbose
-nohup chromium-browser --no-sandbox > /var/log/chromium_out.log &
+nohup chromium-browser --force-device-scale-factor=$scale --no-sandbox > /var/log/chromium_out.log &
