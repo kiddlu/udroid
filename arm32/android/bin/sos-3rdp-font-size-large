@@ -1,0 +1,20 @@
+#!/system/bin/sh
+set -x
+
+#weixin
+am start -n com.tencent.mm/com.tencent.mm.ui.LauncherUI
+sleep 1
+
+tap 1250 2450
+tap 1250 2000
+tap 1250 1200
+tap 1250 1250
+tap 630  2430
+
+key-back
+key-back
+key-back
+key-back
+
+#weibo
+

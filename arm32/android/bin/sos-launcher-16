@@ -2,7 +2,7 @@
 set -x
 
 am start -S com.android.settings/.Settings
-usleep 100
+sleep 1
 
 tap 100 2400
 tap 1000 1600
