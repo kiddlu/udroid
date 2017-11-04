@@ -1,10 +1,10 @@
 #!/system/bin/sh
 
 am start -S com.android.settings/.Settings
-usleep 100
+sleep 1
 
 swipe 0 800 0 0
-usleep 100
+sleep 1
 
 tap 100 1380
 tap 100 2000
