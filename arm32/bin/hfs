@@ -1,5 +1,0 @@
-#!/bin/bash
-
-cd /sdcard
-mkdir -p /var/log/hfs/
-nohup /usr/bin/python3 -m http.server 8080 > /var/log/hfs/hfs.log &

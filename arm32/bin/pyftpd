@@ -1,0 +1,5 @@
+#!/bin/bash
+
+cd /sdcard
+mkdir -p /var/log/python/
+nohup /usr/bin/python3 -m pyftpdlib -p 2121 > /var/log/python/pyftpd.log &
