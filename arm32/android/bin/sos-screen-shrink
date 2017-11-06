@@ -1,0 +1,16 @@
+#!/system/bin/sh
+set -x
+
+am start -S com.android.settings/.Settings
+sleep 1
+
+swipe 0 1000 0 0
+sleep 2
+
+tap 100 1700
+swipe 0 1000 0 0
+sleep 1
+tap 1200 2400
+
+key-back
+key-back
