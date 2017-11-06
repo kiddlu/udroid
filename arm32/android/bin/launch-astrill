@@ -1,0 +1,10 @@
+#!/system/bin/sh
+
+set -x
+
+am start -n com.astrill.astrillvpn/com.vakoms.astrillvpn.LogicCoreActivity 
+
+sleep 3
+
+tap 550 550
+key-back

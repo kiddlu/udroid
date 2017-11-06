@@ -2,19 +2,13 @@
 set -x
 
 #weixin
-am start -n com.tencent.mm/com.tencent.mm.ui.LauncherUI
+am start -n com.tencent.mm/.plugin.setting.ui.setting.SettingsFontUI
 sleep 1
-
-tap 1250 2450
-tap 1250 2000
-tap 1250 1200
-tap 1250 1250
 tap 980  2430
-
-key-back
-key-back
-key-back
 key-back
 
 #weibo
-
+am start -n com.sina.weibo/com.sina.weibo.FontSizeSettingActivity
+sleep 1
+tap 980 400
+key-back
