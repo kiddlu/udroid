@@ -1,10 +1,12 @@
 #!/bin/bash
 
+groupadd -g 1000 system
 groupadd -g 1004 input
 groupadd -g 1007 log
 groupadd -g 1011 adb
 groupadd -g 1015 sdcard_rw
 groupadd -g 1028 sdcard_r
+groupadd -g 2000 shell
 groupadd -g 3001 net_bt_admin
 groupadd -g 3002 net_bt
 groupadd -g 3003 inet
