@@ -6,18 +6,16 @@
 export TERM=xterm-256color
 export PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games
 export PATH=$PATH:/sbin:/vendor/bin:/system/sbin:/system/bin:/system/xbin
+export PATH=/data/ubuntu/usr/local/android/bin:$PATH
 
-if [[ "$CHROOT" || "$SSH_TTY" ]]; then
-  PS1='\n\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]\n# '
-  export OS_PLATFORM=ubuntu
-  if [ "$LD_PRELOAD" ]; then
-    export LD_PRELOAD_OLD=$LD_PRELOAD
-    unset LD_PRELOAD
-  fi
+export ANDROID_DATA=/data
+
+if [[ `/usr/bin/stat -c %i /` -ne "2" ]]; then
+  PS1='\n\[\033[01;32m\]chroot\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]\n# '
+  export OS_PLATFORM=chroot
 else
-  PS1='\n\[\033[45;30m\]android\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]\n# '
-  export PATH=/data/ubuntu/usr/local/android/bin:$PATH
-  export OS_PLATFORM=android
+  PS1='\n\[\033[45;30m\]skeleton\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]\n# '
+  export OS_PLATFORM=skeleton
 fi
 
 function ld-preload-switch()
