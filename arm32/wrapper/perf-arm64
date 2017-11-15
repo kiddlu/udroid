@@ -1,0 +1,8 @@
+#!/bin/bash
+set -x
+CURDIR=`dirname \`readlink -f $0\``
+
+$CURDIR/lib/ld-linux-aarch64.so.1 \
+--library-path $CURDIR/lib \
+$CURDIR/bin/perf \
+$*
