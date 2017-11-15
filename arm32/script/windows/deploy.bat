@@ -5,6 +5,7 @@ adb root
 adb push ../../sdcard     /
 adb push ../../bin        /data/ubuntu/usr/local
 adb push ../../android    /data/ubuntu/usr/local
+adb push ../../wrapper    /data/ubuntu/usr/local
 adb push ../../root       /data/ubuntu/
 
 adb shell /system/bin/toybox chmod -R a+x /data/ubuntu/usr/local/bin
