@@ -1,0 +1,2 @@
+export HOME=/data/ubuntu/root \
+exprot PATH=/data/ubuntu/usr/local/android/bin:/data/ubuntu/usr/local/bin:$PATH
