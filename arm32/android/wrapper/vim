@@ -1,6 +1,0 @@
-#!/system/bin/sh
-
-/data/ubuntu/lib/ld-linux-armhf.so.3 \
---library-path  /data/ubuntu/lib/arm-linux-gnueabihf:/data/ubuntu/usr/lib/arm-linux-gnueabihf \
-/data/ubuntu/usr/bin/vim.basic \
-$*
