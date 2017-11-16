@@ -1,7 +1,7 @@
 #!/bin/bash
 
 groupadd -g 1000 system
-groupadd -g 1004 input
+groupadd -g 1004 android_input
 groupadd -g 1007 log
 groupadd -g 1011 adb
 groupadd -g 1015 sdcard_rw
