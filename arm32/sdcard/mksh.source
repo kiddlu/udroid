@@ -1,2 +1,3 @@
-export HOME=/data/ubuntu/root \
-exprot PATH=/data/ubuntu/usr/local/android/bin:/data/ubuntu/usr/local/bin:$PATH
+export HOME=/data/ubuntu/root
+PS1='mksh@andoird:$PWD # '
+echo "export PATH=/data/ubuntu/usr/local/android/bin:/data/ubuntu/usr/local/bin:$PATH"
