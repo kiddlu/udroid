@@ -4,7 +4,7 @@ export ANDROID_DATA=/data
 export TERM=xterm-256color
 export PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games
 export PATH=$PATH:/sbin:/vendor/bin:/system/sbin:/system/bin:/system/xbin
-export PATH=/data/ubuntu/usr/local/android/bin:$PATH
+export PATH=/usr/local/android/bin:/usr/local/wrapper:$PATH
 
 if [[ `/usr/bin/stat -c %i /` -ne "2" ]]; then
   PS1='\n\[\033[01;32m\]chroot@android\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]\n# '
