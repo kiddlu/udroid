@@ -1,5 +1,0 @@
-#make sure selinux disable
-/system/bin/setenforce 0
-
-/data/ubuntu/bin/busybox \
-chroot /data/ubuntu/ /usr/bin/env -i HOME=/root /usr/sbin/service webmin start
