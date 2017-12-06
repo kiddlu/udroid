@@ -22,4 +22,4 @@
 /data/ubuntu/bin/busybox ln -sf /data/ubuntu/usr /usr
 /data/ubuntu/bin/busybox ln -sf /data/ubuntu/var /var
 
-HOME=/data/ubuntu/root /data/ubuntu/bin/bash-static
+HOME=/data/ubuntu/root /data/ubuntu/bin/bash
