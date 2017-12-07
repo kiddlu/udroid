@@ -12,7 +12,14 @@ groupadd -g 3002 net_bt
 groupadd -g 3003 inet
 groupadd -g 3006 net_bw_stats
 
-usermod -a -G input log adb sdcard_rw sdcard_r net_bt_admin net_bt inet net_bw_stats root
+usermod -a -G android_input root 
+usermod -a -G log root
+usermod -a -G adb root
+usermod -a -G sdcard_rw root
+usermod -a -G sdcard_r root
+usermod -a -G net_bt_admin root
+usermod -a -G net_bt root
+usermod -a -G inet root
+usermod -a -G net_bw_stats root
 
-echo "/system/bin/id to check"
-echo "vim /etc/passwd change the group of _apt from 65534 to 3003"
+sed -i "s/_apt:x:105:65534/_apt:x:105:3003/" /etc/passwd
