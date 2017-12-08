@@ -10,5 +10,8 @@ if [ $? != 0 ]; then
     /data/ubuntu/bin/busybox mount -o bind /sys/kernel/debug /data/ubuntu/sys/kernel/debug
     /data/ubuntu/bin/busybox mount -o bind /system/ /data/ubuntu/system
     /data/ubuntu/bin/busybox mount -o bind /sdcard /data/ubuntu/sdcard
+    
+    mkdir /dev/data
+    /data/ubuntu/bin/busybox mount -o bind /data /dev/data
 fi
 

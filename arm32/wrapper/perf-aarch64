@@ -2,7 +2,7 @@
 
 CURDIR=`dirname \`readlink -f $0\``
 
-$CURDIR/lib/ld-linux-aarch64.so.1 \
---library-path $CURDIR/lib \
-$CURDIR/bin/perf \
+$CURDIR/lib64/ld-linux-aarch64.so.1 \
+--library-path $CURDIR/lib64 \
+$CURDIR/bin64/perf \
 $*

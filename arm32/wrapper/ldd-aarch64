@@ -27,7 +27,7 @@ TEXTDOMAIN=libc
 TEXTDOMAINDIR=/usr/share/locale
 
 CURDIR=`dirname \`readlink -f $0\``
-RTLDLIST=$CURDIR/lib/ld-linux-aarch64.so.1
+RTLDLIST=$CURDIR/lib64/ld-linux-aarch64.so.1
 warn=
 bind_now=
 verbose=

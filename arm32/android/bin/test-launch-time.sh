@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/system/bin/sh
 
 echo -e '\n' 
 echo ============drop_cache time================
