@@ -2,4 +2,4 @@
 
 cd /sdcard
 mkdir -p /var/log/python/
-nohup /usr/bin/python3 -m http.server 8080 > /var/log/python/pyhttpd.log &
+nohup /usr/bin/python3 -m http.server 8080 > /var/log/python/pyweb.log &

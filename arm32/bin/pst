@@ -1,0 +1,4 @@
+#!/bin/bash
+
+#-a
+pstree -p -g -n

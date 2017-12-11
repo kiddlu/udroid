@@ -4,6 +4,7 @@ adb root
 
 ::set up term for android host adb
 adb install Term.apk
+adb shell am start -W jackpal.androidterm/.Term
 adb push adb /data/user/0/jackpal.androidterm/app_HOME/
 adb shell /system/bin/toybox chmod a+x /data/user/0/jackpal.androidterm/app_HOME/adb
 adb shell setprop persist.adb.tcp.port 5555

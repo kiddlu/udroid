@@ -29,3 +29,9 @@ function ld-preload-switch()
     fi
   fi
 }
+
+
+function ld-hook()
+{
+    export LD_PRELOAD=$LD_PRELOAD:/usr/local/android/hook/libandroid-shmem.so
+}
