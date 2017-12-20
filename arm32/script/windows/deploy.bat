@@ -7,7 +7,7 @@ adb push ../../android    /data/ubuntu/usr/local
 adb push ../../root       /data/ubuntu/
 
 adb shell /system/bin/toybox chmod -R a+x /data/ubuntu/usr/local/android/bin
-adb shell /system/bin/toybox chmod -R a+x /data/ubuntu/usr/local/android/xbin
+adb shell /system/bin/toybox chmod -R a+x /data/ubuntu/usr/local/android/shell
 adb shell /system/bin/toybox chmod -R a+x /data/ubuntu/usr/local/android/link
 adb shell /system/bin/toybox chmod -R a+x /data/ubuntu/usr/local/android/wrapper
 
