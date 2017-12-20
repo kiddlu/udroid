@@ -3,4 +3,4 @@
 #set -x
 
 CURDIR=`dirname \`readlink -f $0\``
-env LD_LIBRARY_PATH=$CURDIR/lib $CURDIR/bin/taskstats $@ 
+env LD_LIBRARY_PATH=$CURDIR/lib $CURDIR/bin/ag $@ 
