@@ -1,5 +1,6 @@
 # User dependent .bashrc file
 export ANDROID_DATA=/data
+export ANDROID_ROOT=/system
 
 export TERM=xterm-256color
 export PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games
