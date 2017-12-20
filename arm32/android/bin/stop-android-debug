@@ -1,0 +1,5 @@
+#!/bin/bash
+
+ulimit 0
+/system/bin/stop debuggerd 
+/system/bin/stop debuggerd64 

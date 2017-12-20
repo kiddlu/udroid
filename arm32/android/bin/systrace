@@ -1,0 +1,6 @@
+#!/system/bin/sh
+
+#set -x
+
+CURDIR=`dirname \`readlink -f $0\``
+$CURDIR/systrace-dir/systrace.py $@ 
