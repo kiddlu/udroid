@@ -1,8 +1,18 @@
 ## 如何在Android环境下运行Ubuntu
 
-﻿为什么使用arm-linux-***-gcc交叉编译的程序，不能直接在android手机下运行？必须静态编译才可以？
+为什么使用arm-linux-***-gcc交叉编译的程序，不能直接在android手机下运行？必须静态编译才可以？
 
 例子：hello.c
+```
+#include <stdio.h>
+
+int main()
+{
+    printf("Hello World!!\n");
+    return 0;
+}
+```
+
 
 ubuntu arm下编译:
 
@@ -33,7 +43,7 @@ root@colombo:/data/local/tmp # ./hello-static
 Hello World!!
 ```
 
-然后我们回到ubuntu arm，查看一下hello这个elf的头部和一个android elf的头部
+然后我们回到ubuntu arm，查看一下hello这个elf的头部和一个android程序的elf的头部
 
 ```
 root at localhost in /data/repo/hello
@@ -58,7 +68,7 @@ Program Headers:
 
 
 
-# /system/bin/app_process32是一个安卓程序
+# /system/bin/app_process32是一个android exe
 $ readelf -l /system/bin/app_process32
 
 Elf file type is DYN (Shared object file)
@@ -77,7 +87,6 @@ Program Headers:
   GNU_STACK      0x000000 0x00000000 0x00000000 0x00000 0x00000 RW  0
   EXIDX          0x003878 0x00003878 0x00003878 0x001d8 0x001d8 R   0x4
   GNU_RELRO      0x004cd8 0x00005cd8 0x00005cd8 0x00328 0x00328 RW  0x8
-
 ```
 
 可以看出ubuntu程序和android程序的program interpreter是不一样的。
@@ -86,7 +95,7 @@ Program Headers:
 
 
 
-那么，有几种方式能让ubuntu程序在android环境下运行？我现在发现的有五种
+那么，有几种方式能让ubuntu程序在android环境下运行？我目前现在发现的有五种
 
 ### 1.静态编译
 
@@ -187,10 +196,4 @@ chroot /data/ubuntu/ /usr/bin/env HOME=/root /bin/bash
 优点是不需要root权限，缺点是不能查看系统级别的信息，而且部分程序需要移植工作，[termux](https://termux.com/)使用的就是这种方式。
 
 
-
 udroid使用的方式就是chroot方式，为ubuntu arm创建一个类似于容器的环境，在这个环境下运行。请确保adb是以root权限运行的，并且selinux处于关闭状态。当然确保硬件平台一致，Android是ARM手机的就下载Ubuntu ARM版本，Android是X86平板的就下载Ubuntu X86版本。
-
-
-
-
-
