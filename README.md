@@ -1,4 +1,6 @@
-## 如何在Android环境下运行Ubuntu
+[TOC]
+
+## 如何在Android环境下运行Ubuntu程序
 
 为什么使用arm-linux-***-gcc交叉编译的程序，不能直接在android手机下运行？必须静态编译才可以？
 
@@ -188,12 +190,103 @@ mount -o bind /sdcard /dev/block/udroid/sdcard
 chroot /data/ubuntu/ /usr/bin/env HOME=/root /bin/bash
 ```
 
-
-
 ### 5.proot
 
 使用ptrace()这个系统调用做钩子，伪造一个类似chroot的环境。
 优点是不需要root权限，缺点是不能查看系统级别的信息，而且部分程序需要移植工作，[termux](https://termux.com/)使用的就是这种方式。
 
 
-udroid使用的方式就是chroot方式，为ubuntu arm创建一个类似于容器的环境，在这个环境下运行。请确保adb是以root权限运行的，并且selinux处于关闭状态。当然确保硬件平台一致，Android是ARM手机的就下载Ubuntu ARM版本，Android是X86平板的就下载Ubuntu X86版本。
+
+## 如何在Android下部署Ubuntu
+udroid使用的方式就是chroot方式，为ubuntu arm创建一个类似于容器的环境，在这个环境下运行。请确保adb是以root权限运行的，并且selinux处于关闭状态。当然确保硬件平台一致，Android是ARM手机的就下载Ubuntu ARM版本，Android是X86平板的就下载Ubuntu X86版本。目前udroid默认使用的是arm版本。
+
+
+### download-img
+从 https://uec-images.ubuntu.com/ 下载ARMHF的镜像, windows平台可以运行download-img.bat获取，linux平台可以用wget实现相同操作
+```
+@echo on
+
+set UBUNTU_ROOTFS=.\ubuntu.tar.gz
+set UBUNTU_CLOUDIMG=https://uec-images.ubuntu.com/xenial/current/xenial-server-cloudimg-armhf-root.tar.gz
+
+"%SystemRoot%\System32\WindowsPowerShell\v1.0\powershell.exe" ^
+-NoProfile -InputFormat None -ExecutionPolicy Bypass ^
+-Command "((New-Object System.Net.WebClient).DownloadFile('%UBUNTU_CLOUDIMG%','%UBUNTU_ROOTFS%'))"
+```
+
+### install
+确保rootfs的包被命名成ubuntu.tar.gz，运行install.bat，安装ubuntu根系统到android目录/data/ubuntu,
+这里会顺带安装一个安卓中断模拟器并将系统adb设置为监听网络端口么，这样手机界面就能从apk通过adb shell访问手机获得root权限。
+```
+@echo of
+
+
+adb root
+
+::set up term for android host adb
+adb install Term.apk
+adb shell am start -W jackpal.androidterm/.Term
+adb push adb /data/user/0/jackpal.androidterm/app_HOME/
+adb shell /system/bin/toybox chmod a+x /data/user/0/jackpal.androidterm/app_HOME/adb
+adb shell setprop persist.adb.tcp.port 5555
+
+::unzip ubuntu rootfs
+adb push busybox /data/local/tmp/
+adb shell /system/bin/toybox chmod a+x /data/local/tmp/busybox
+adb shell /data/local/tmp/busybox mkdir -p /data/ubuntu
+adb push  ubuntu.tar.gz /data/ubuntu
+adb shell /data/local/tmp/busybox tar -zxvf /data/ubuntu/ubuntu.tar.gz -C /data/ubuntu
+```
+
+### deploy
+上一步中ubuntu rootfs已经部署好了，下面是客制化的东西，就是把我自己的程序push到手机上，方便手机切换环境和使用
+```
+@echo of
+
+adb root
+
+adb push ../../sdcard     /
+adb push ../../android    /data/ubuntu/usr/local
+adb push ../../root       /data/ubuntu
+
+adb shell /system/bin/toybox chmod -R a+x /data/ubuntu/usr/local/android/bin
+adb shell /system/bin/toybox chmod -R a+x /data/ubuntu/usr/local/android/shell
+adb shell /system/bin/toybox chmod -R a+x /data/ubuntu/usr/local/android/link
+adb shell /system/bin/toybox chmod -R a+x /data/ubuntu/usr/local/android/wrapper
+
+adb shell /system/bin/toybox mkdir -p /data/ubuntu/system
+adb shell /system/bin/toybox mkdir -p /data/ubuntu/sdcard
+
+adb shell /system/bin/toybox cp -f property_contexts /data/ubuntu/
+adb shell /system/bin/toybox cp -f seapp_contexts /data/ubuntu/
+adb shell /system/bin/toybox cp -f selinux_version /data/ubuntu/
+adb shell /system/bin/toybox cp -f sepolicy /data/ubuntu/
+adb shell /system/bin/toybox cp -f service_contexts /data/ubuntu/
+adb shell /system/bin/toybox cp -rf /data/ubuntu/etc /data/ubuntu/etc.bak
+adb shell /system/bin/toybox cp -Lrf /system/etc/* /data/ubuntu/etc/
+adb shell /system/bin/toybox cp -Lrf /sbin/* /data/ubuntu/sbin/
+```
+
+### use
+好了，文件部署已经完成，可以通过下面的程序使能udroid。如果出现LD_PRELOAD的报错，说明厂商默认强制加载了一些动态库，
+可以通过`ld-preload-switch`切换掉
+```
+d:\udroid\arm32\script\windows
+# adb shell
+root@colombo:/ # sh /sdcard/fsmount
+root@colombo:/ # sh /sdcard/ubuntu.chroot
+ERROR: ld.so: object 'libNimsWrap.so' from LD_PRELOAD cannot be preloaded (cannot open shared object file): ignored.
+ERROR: ld.so: object 'libNimsWrap.so' from LD_PRELOAD cannot be preloaded (cannot open shared object file): ignored.
+ERROR: ld.so: object 'libNimsWrap.so' from LD_PRELOAD cannot be preloaded (cannot open shared object file): ignored.
+
+ubuntu@android:/
+#
+```
+
+这时候已经进入udroid了，可以用apt 安装sshd了。如果无法访问网络，请运行
+```
+setdns.sh
+setgroup.sh
+```
+
+有兴趣可以看看他们做了什么，原理就不解释了。
