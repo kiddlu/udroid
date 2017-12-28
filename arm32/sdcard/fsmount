@@ -6,7 +6,8 @@ if [ $? != 0 ]; then
     /data/ubuntu/bin/busybox mount -o bind /sys /data/ubuntu/sys
     /data/ubuntu/bin/busybox mount -t debugfs none /sys/kernel/debug
     /data/ubuntu/bin/busybox mount -o bind /sys/kernel/debug /data/ubuntu/sys/kernel/debug
-    /data/ubuntu/bin/busybox mount -o remount,ro,bind /sys/fs/selinux /data/ubuntu/sys/fs/selinux
+    /data/ubuntu/bin/busybox mount -o bind /sys/fs/selinux /data/ubuntu/sys/fs/selinux
+    /data/ubuntu/bin/busybox mount -o bind,remount,ro /sys/fs/selinux /data/ubuntu/sys/fs/selinux
     /data/ubuntu/bin/busybox mount -o bind /dev /data/ubuntu/dev
     /data/ubuntu/bin/busybox mount -o bind /dev/pts /data/ubuntu/dev/pts
     
