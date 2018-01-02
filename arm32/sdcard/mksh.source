@@ -1,3 +1,7 @@
 export HOME=/data/ubuntu/root
+export LANG=en_US.UTF-8
+export TERM=xterm-256color
+#echo "export PATH=/data/data/com.termux/files/usr/bin:/data/data/com.termux/files/usr/bin/applets:$PATH"
+echo "export PATH=/data/ubuntu/usr/local/udroid/mksh:/data/ubuntu/usr/local/udroid/mksh/scripts:$PATH"
+
 PS1='mksh@andoird:$PWD # '
-echo "export PATH=/data/ubuntu/usr/local/udroid/mksh:$PATH"
