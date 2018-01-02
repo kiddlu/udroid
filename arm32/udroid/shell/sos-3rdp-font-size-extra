@@ -2,7 +2,7 @@
 set -x
 
 #weixin
-adb shell am start -n com.tencent.mm/.plugin.setting.ui.setting.SettingsFontUI
+adb shell am start --user 10 -n com.tencent.mm/.plugin.setting.ui.setting.SettingsFontUI
 sleep 1
 tap 980  2430
 key-back

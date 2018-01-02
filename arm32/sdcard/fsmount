@@ -10,6 +10,7 @@ if [ $? != 0 ]; then
     /data/ubuntu/bin/busybox mount -o bind,remount,ro /sys/fs/selinux /data/ubuntu/sys/fs/selinux
     /data/ubuntu/bin/busybox mount -o bind /dev /data/ubuntu/dev
     /data/ubuntu/bin/busybox mount -o bind /dev/pts /data/ubuntu/dev/pts
+    /data/ubuntu/bin/busybox mount -t tmpfs none /data/ubuntu/tmp
     
     #android
     /data/ubuntu/bin/busybox mkdir -p /dev/block/udroid/data
@@ -17,5 +18,12 @@ if [ $? != 0 ]; then
     /data/ubuntu/bin/busybox mkdir -p /dev/block/udroid/sdcard
     /data/ubuntu/bin/busybox mount -o bind /data   /dev/block/udroid/data
     /data/ubuntu/bin/busybox mount -o bind /system /dev/block/udroid/system
+    /data/ubuntu/bin/busybox mount -o bind,remount,noexec /dev/block/udroid/system
     /data/ubuntu/bin/busybox mount -o bind /sdcard /dev/block/udroid/sdcard
+
+    #oem
+    #/data/ubuntu/bin/busybox mount -o bind /dev/cpuctl       /data/ubuntu/dev/cpuctl
+    #/data/ubuntu/bin/busybox mount -o bind /dev/blkio        /data/ubuntu/dev/blkio
+    #/data/ubuntu/bin/busybox mount -o bind /dev/cpuset       /data/ubuntu/dev/cpuset
+    #/data/ubuntu/bin/busybox mount -o bind /dev/usb-ffs/adb  /data/ubuntu/dev/usb-ffs/adb
 fi
