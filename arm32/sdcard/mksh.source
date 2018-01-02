@@ -1,3 +1,3 @@
 export HOME=/data/ubuntu/root
 PS1='mksh@andoird:$PWD # '
-echo "export PATH=/data/ubuntu/usr/local/android/shell:/data/ubuntu/usr/local/android/link:/data/ubuntu/usr/local/android/wrapper:$PATH"
+echo "export PATH=/data/ubuntu/usr/local/udroid/mksh:$PATH"
