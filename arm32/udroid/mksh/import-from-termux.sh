@@ -3,15 +3,13 @@
 set -x
 
 TPREFIX=/data/data/com.termux/files/usr
-LDD=ldd-aarch64
-
 mkdir -p ./bin
 mkdir -p ./lib
 
 function bincp()
 {
 cp $(readlink -f $TPREFIX/bin/$1) ./bin/$1
-for libs in `$LDD $TPREFIX/bin/$1 |awk '{print $1}' `; do
+for libs in `objdump -p $TPREFIX/bin/$1 | grep NEED | awk '{print $2}' `; do
     cp $(readlink -f $TPREFIX/lib/$libs) ./lib/$libs 
 done
 }

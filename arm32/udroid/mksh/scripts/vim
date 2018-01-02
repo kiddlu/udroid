@@ -1,0 +1,3 @@
+#!/system/bin/sh
+
+/data/ubuntu/bin/busybox vi $@
