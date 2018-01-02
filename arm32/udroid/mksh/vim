@@ -1,6 +1,0 @@
-#!/system/bin/sh
-
-#set -x
-
-CURDIR=$(/data/ubuntu/bin/busybox dirname $(/data/ubuntu/bin/busybox readlink -f $0))
-/data/ubuntu/bin/busybox env LD_LIBRARY_PATH=$CURDIR/lib $CURDIR/bin/vim $@
