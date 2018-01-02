@@ -1,0 +1,9 @@
+#!/bin/bash
+set -x
+am start -n com.android.settings/com.android.settings.FontScaleSettingsActivity
+
+sleep 1
+
+tap 100 800
+
+key-back

@@ -1,0 +1,10 @@
+#!/bin/bash
+
+set -x
+
+am start -W com.termux/.app.TermuxActivity
+
+sleep 1
+
+input text "sshd"
+input keyevent KEYCODE_ENTER

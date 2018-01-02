@@ -1,0 +1,8 @@
+#!/bin/bash
+set -x
+
+am start -n com.android.settings/com.android.settings.DevelopmentSettings
+sleep 1
+tap 1250 2150
+
+key-back

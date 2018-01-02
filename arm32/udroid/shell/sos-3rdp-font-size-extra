@@ -1,0 +1,14 @@
+#!/bin/bash
+set -x
+
+#weixin
+adb shell am start -n com.tencent.mm/.plugin.setting.ui.setting.SettingsFontUI
+sleep 1
+tap 980  2430
+key-back
+
+#weibo
+adb shell am start -n com.sina.weibo/com.sina.weibo.FontSizeSettingActivity
+sleep 1
+tap 980 400
+key-back

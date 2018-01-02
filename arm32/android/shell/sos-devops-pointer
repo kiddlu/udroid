@@ -1,7 +1,0 @@
-#!/system/bin/sh
-set -x
-
-am start -n com.android.settings/com.android.settings.DevelopmentSettings
-tap 1250 2150
-
-key-back

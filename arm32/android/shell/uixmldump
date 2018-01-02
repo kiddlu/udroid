@@ -1,5 +1,0 @@
-#!/bin/bash
-
-/system/bin/sh /system/bin/uiautomator dump /proc/self/fd/1 |\
-sed "s/UI hierchary dumped to: \/proc\/self\/fd\/1//" |\
-xmllint --format -

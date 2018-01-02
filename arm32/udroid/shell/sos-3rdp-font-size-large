@@ -1,0 +1,14 @@
+#!/bin/bash
+set -x
+
+#weixin
+am start -n com.tencent.mm/.plugin.setting.ui.setting.SettingsFontUI
+sleep 1
+tap 630  2430
+key-back
+
+#weibo
+am start -n com.sina.weibo/com.sina.weibo.FontSizeSettingActivity
+sleep 1
+tap 980 550
+key-back

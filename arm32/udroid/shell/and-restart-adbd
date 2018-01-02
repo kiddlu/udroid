@@ -1,0 +1,5 @@
+#!/bin/bash
+
+#adb shell setprop service.adb.tcp.port 5555
+adb shell stop adbd
+adb shell start adbd

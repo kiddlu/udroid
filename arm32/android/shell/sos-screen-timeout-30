@@ -1,6 +1,0 @@
-#!/system/bin/sh
-set -x
-
-am start -n com.android.settings/com.android.settings.ScreenOffTimeoutActivity
-tap 100 1700
-key-back

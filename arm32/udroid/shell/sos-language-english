@@ -1,0 +1,9 @@
+#!/bin/bash
+set -x
+
+am start -n com.android.settings/com.android.settings.inputmethod.LocalePickerActivity
+sleep 1
+
+tap 1000 400
+
+key-back

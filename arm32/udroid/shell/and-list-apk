@@ -1,0 +1,13 @@
+#!/bin/bash
+
+adb shell pm list packages -f > $TMPDIR/tmplog.pid.$$
+
+for dir in '/system/app' '/system/priv-app' '/system/vendor' '/system/framework' '/data/app'; do
+	echo 
+	echo dir: $dir
+	cat $TMPDIR/tmplog.pid.$$ | grep $dir
+done
+
+rm $TMPDIR/tmplog.pid.$$
+
+echo $TMPDIR

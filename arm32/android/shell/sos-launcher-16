@@ -1,8 +1,0 @@
-#!/system/bin/sh
-set -x
-
-am start -n com.android.settings/com.android.settings.LauncherSettingsActivity
-sleep 1
-
-tap 1000 1600
-tap 1000 1500

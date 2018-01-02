@@ -1,0 +1,17 @@
+#!/bin/bash
+
+echo -e '\n' 
+echo ============drop_cache time================
+adb shell am force-stop com.tencent.mm
+adb shell echo 3 > /proc/sys/vm/drop_caches
+adb shell am start -W com.tencent.mm/.ui.LauncherUI
+
+echo -e '\n' 
+echo ==============cold time===================
+adb shell am force-stop com.tencent.mm
+adb shell am start -W com.tencent.mm/.ui.LauncherUI
+
+echo -e '\n' 
+echo ==============hot time===================
+adb shell input keyevent KEYCODE_HOME
+adb shell am start -W com.tencent.mm/.ui.LauncherUI
