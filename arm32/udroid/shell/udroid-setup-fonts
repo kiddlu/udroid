@@ -2,5 +2,6 @@
 
 set -x
 
+mkdir -p /usr/share/fonts/truetype/
 ln -sf /system/fonts /usr/share/fonts/truetype/android-font
 fc-cache -fv

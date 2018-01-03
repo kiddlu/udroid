@@ -1,0 +1,6 @@
+#!/bin/bash
+
+set -x
+
+cat $HOME/.android/adbkey.pub >> /data/misc/adb/adb_keys
+adb kill-server
