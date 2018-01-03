@@ -1,3 +1,7 @@
 #!/system/bin/sh
 
-/data/ubuntu/bin/busybox find . -name "*$1*"
+if [ -z "$@" ]; then
+    find
+else
+    find | grep $@ 
+fi

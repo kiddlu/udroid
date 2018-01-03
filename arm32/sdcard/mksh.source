@@ -1,7 +1,27 @@
-export HOME=/data/ubuntu/root
-export LANG=en_US.UTF-8
-export TERM=xterm-256color
-#echo "export PATH=/data/data/com.termux/files/usr/bin:/data/data/com.termux/files/usr/bin/applets:$PATH"
-echo "export PATH=/data/ubuntu/usr/local/udroid/mksh:/data/ubuntu/usr/local/udroid/mksh/scripts:$PATH"
+#default
+function init-udroid-mksh()
+{
+    export HOME=/data/ubuntu/root
+    export LANG=en_US.UTF-8
+    export TERM=xterm-256color
+    export PATH=/data/ubuntu/usr/local/udroid/mksh:/data/ubuntu/usr/local/udroid/mksh/scripts:$PATH
+}
+
+#if you install termux on your android,
+#we can take utils from termux, then run them on mksh
+function rob-from-termux()
+{
+    export HOME=/data/ubuntu/root
+    export LANG=en_US.UTF-8
+    export TERM=xterm-256color
+    export OLD_PATH=$PATH
+    export PATH=/data/data/com.termux/files/usr/bin
+    export LD_LIBRARY_PATH=/data/data/com.termux/files/usr/lib
+    export PREFIX=/data/data/com.termux/files/usr
+
+    echo "do not use pkg/apt in mksh, alias them to echo"
+    alias pkg=echo
+    alias apt=echo
+}
 
 PS1='mksh@andoird:$PWD # '
