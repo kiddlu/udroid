@@ -1,18 +1,17 @@
 # User dependent .bashrc file
-export ANDROID_DATA=/data
-export ANDROID_ROOT=/system
+#export ANDROID_DATA=/data
+#export ANDROID_ROOT=/system
 
 export TERM=xterm-256color
 export PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games
-export PATH=$PATH:/sbin:/vendor/bin:/system/sbin:/system/bin:/system/xbin
-export PATH=/usr/local/udroid/bin:/usr/local/udroid/shell:/usr/local/udroid/wrapper:/usr/local/udroid/python:$PATH
+export PATH=/usr/local/udroid/adb:/usr/local/udroid/bin:/usr/local/udroid/python:/usr/local/udroid/shell:/usr/local/udroid/wrapper:$PATH
 
 if [[ `/usr/bin/stat -c %i /` -ne "2" ]]; then
   PS1='\n\[\033[01;32m\]chroot@android\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]\n# '
-  export OS_PLATFORM=chroot
+  #export OS_PLATFORM=chroot
 else
   PS1='\n\[\033[01;32m\]skeleton@android\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]\n# '
-  export OS_PLATFORM=skeleton
+  #export OS_PLATFORM=skeleton
 fi
 
 # If not running interactively, return 
