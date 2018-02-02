@@ -18,7 +18,8 @@ if [ $? != 0 ]; then
     /data/ubuntu/bin/busybox mkdir -p /dev/block/udroid/sdcard
     /data/ubuntu/bin/busybox mount -o bind /data   /dev/block/udroid/data
     /data/ubuntu/bin/busybox mount -o bind /system /dev/block/udroid/system
-    /data/ubuntu/bin/busybox mount -o bind,remount,noexec /data/ubuntu/dev/block/udroid/system
+    #/data/ubuntu/bin/busybox mount -o bind,remount,noexec /data/ubuntu/dev/block/udroid/system
+    /data/ubuntu/bin/busybox mount -o bind,remount /data/ubuntu/dev/block/udroid/system
     /data/ubuntu/bin/busybox mount -o bind /sdcard /dev/block/udroid/sdcard
 
     #oem

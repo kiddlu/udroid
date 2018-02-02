@@ -4,9 +4,7 @@ set -x
 
 usage() {
 cat <<USAGE
-
 Usage: setcharging on/off
-
 USAGE
 }
 

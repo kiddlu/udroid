@@ -1,0 +1,3 @@
+#!/bin/bash
+
+#/bin/uname $@ | sed "s/aarch64/armv7l/g"

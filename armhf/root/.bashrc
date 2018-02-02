@@ -6,6 +6,9 @@ export TERM=xterm-256color
 export PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games
 export PATH=/usr/local/udroid/adb:/usr/local/udroid/bin:/usr/local/udroid/python:/usr/local/udroid/shell:/usr/local/udroid/wrapper:$PATH
 
+export LANG=en_US.UTF-8
+export LC_ALL=en_US.UTF-8
+
 if [[ `/usr/bin/stat -c %i /` -ne "2" ]]; then
   PS1='\n\[\033[01;32m\]chroot@android\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]\n# '
   #export OS_PLATFORM=chroot
@@ -62,7 +65,11 @@ function ld-preload-switch()
 }
 
 
-function ld-hook()
+function ld-hook-shmem()
 {
-    export LD_PRELOAD=$LD_PRELOAD:/usr/local/android/hook/libandroid-shmem.so
+    export LD_PRELOAD=$LD_PRELOAD:/usr/local/udroid/hook/libandroid-shmem.so
+}
+function ld-hook-uname()
+{
+    export LD_PRELOAD=$LD_PRELOAD:/usr/local/udroid/hook/libsyscall-uname.so
 }
