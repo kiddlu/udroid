@@ -48,6 +48,9 @@ alias ll='ls -l --show-control-chars'                              # long list
 alias la='ls -A --show-control-chars'                              # all but . and ..
 alias l='ls -CF --show-control-chars'                              #
 
+
+alias open='xdg-open'                              #
+
 ######
 # function
 ######
@@ -73,3 +76,9 @@ function ld-hook-uname()
 {
     export LD_PRELOAD=$LD_PRELOAD:/usr/local/udroid/hook/libsyscall-uname.so
 }
+#
+#function zhcn()
+#{   
+#    export LC_ALL=zh_CN.GBK
+#    export LANG=zh_CN.GBK
+#}
