@@ -1,2 +1,4 @@
 ln -sf /sdcard/Download Download
+ln -sf /sdcard/tencent/MicroMsg/Download WeChat_Download
 ln -sf /sdcard/Pictures/Screenshots Android_Screenshots
+ln -sf /sdcard/TechBooks TechBooks
