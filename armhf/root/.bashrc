@@ -82,3 +82,8 @@ function ld-hook-uname()
 #    export LC_ALL=zh_CN.GBK
 #    export LANG=zh_CN.GBK
 #}
+
+if [ "$SHLVL" == "1" ]; then
+    echo -e '\n\033[01;32mAuto Launch Zsh'
+    zsh
+fi
