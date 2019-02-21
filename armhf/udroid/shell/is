@@ -1,0 +1,21 @@
+#!/bin/bash
+
+set -x
+
+cur_dir=`pwd`
+ncb_port=8963
+
+if [ -n "$SSH_CONNECTION" ]; then
+    svr_ip=`echo $SSH_CONNECTION | awk '{print $1}'`
+    clt_ip=`echo $SSH_CONNECTION | awk '{print $3}'`
+    echo [JUMP] $svr_ip "$cur_dir $clt_ip" | nc $svr_ip $ncb_port
+else
+    lsof -i:$ncb_port 2>&1 > /dev/null
+    if [ $? -ne "0" ]; then
+        echo "ncbd do not start, pls start daemon first"
+        exit 1
+    fi
+    svr_ip="127.0.0.1"
+    clt_ip="127.0.0.1"
+    echo [JUMP] $svr_ip "$cur_dir $clt_ip" | nc $svr_ip $ncb_port &
+fi
