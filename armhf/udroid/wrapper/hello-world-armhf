@@ -1,0 +1,8 @@
+#!/system/bin/sh 
+
+CURDIR=`dirname \`readlink -f $0\``
+
+$CURDIR/lib/ld-linux-armhf.so.3 \
+--library-path $CURDIR/lib \
+$CURDIR/bin/hello \
+$@

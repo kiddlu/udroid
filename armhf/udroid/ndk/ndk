@@ -3,4 +3,4 @@
 #set -x
 
 CURDIR=$(/data/ubuntu/bin/busybox dirname $(/data/ubuntu/bin/busybox readlink -f $0))
-/data/ubuntu/bin/busybox env LD_LIBRARY_PATH=$CURDIR/lib:/data/data/com.termux/files/usr/lib:/system/lib $CURDIR/bin/a.out $@ 
+/data/ubuntu/bin/busybox env LD_LIBRARY_PATH=$CURDIR/lib $CURDIR/bin/a.out $@ 
