@@ -1,3 +1,5 @@
 #!/bin/bash
 
-adb shell settings put system screen_brightness "$@"
+#adb shell settings put system screen_brightness "$@"
+
+echo "$@" > /sys/class/leds/lcd-backlight/brightness
